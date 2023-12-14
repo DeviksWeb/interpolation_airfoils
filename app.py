@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_file, redirect, session, url_for
 import aerosandbox as asb
 from datetime import datetime
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -11,7 +12,7 @@ def running():
 @app.route("/", methods=["POST"])
 def get_values():
     model = request.form['model']
-    quality = int(request.form['quality'])/2
+    quality = int(request.form['quality'])
     af = asb.Airfoil(model)
     af = af.repanel(n_points_per_side=(int(quality)))
     now = datetime.now()
@@ -24,3 +25,5 @@ def get_values():
 def download():
     file_name = request.args["file_name"]
     return send_file(file_name, as_attachment=True)
+
+serve(app, host="0.0.0.0", port=8080)
