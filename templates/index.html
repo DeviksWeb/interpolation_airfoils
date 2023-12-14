@@ -17,14 +17,16 @@
 		/>
 	</head>
 	<body>
+		<h1>Інтерполяція профілів крил з Airfoils</h1>
 		<form method="POST">
-			<h2>1. Введіть модель літака</h2>
+			<h2>1. Введіть id моделі літака:</h2>
+			<img src="{{ url_for('static', filename='explaining.png') }}" />
 			<input
 				type="text"
 				name="model"
 				placeholder="Mодель..."
 			/>
-			<h2>2. Введіть кількість точок</h2>
+			<h2>2. Введіть кількість точок (якість графіка):</h2>
 			<input
 				type="text"
 				name="quality"
