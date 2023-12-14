@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="ie=edge"
+		/>
+		<title>Інтерполяція</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='style.css') }}"
+		/>
+	</head>
+	<body>
+		<form method="POST">
+			<h2>1. Введіть модель літака</h2>
+			<input
+				type="text"
+				name="model"
+				placeholder="Mодель..."
+			/>
+			<h2>2. Введіть кількість точок</h2>
+			<input
+				type="text"
+				name="quality"
+				placeholder="Кількість точок..."
+			/>
+			<input
+				type="submit"
+				value="Завантажити файл"
+			/>
+		</form>
+	</body>
+</html>
